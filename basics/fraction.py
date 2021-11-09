@@ -14,6 +14,28 @@ class Fraction:
         
         return Fraction(newnum//common, newden//common)
 
+    def __sub__(self, other_fraction):
+        newnum = (self.num * other_fraction.den) - (self.den * other_fraction.num)
+        newden = self.den * other_fraction.den
+        common = gcd(newnum, newden)
+        
+        return Fraction(newnum//common, newden//common)
+
+    def __mul__(self, other):
+        
+        newnum = self.num * other.num
+        newden = self.den * other.den
+        common = gcd(newnum, newden)
+
+        return Fraction(newnum//common, newden//common)
+    
+    def __eq__(self, other_fraction):
+        firstnum = self.num * other_fraction.den
+        secondnum = other_fraction.num * self.den
+
+        return firstnum == secondnum
+
+
 
 def gcd(a, b):
     while a%b != 0:
@@ -26,8 +48,14 @@ def gcd(a, b):
     return b
 
 
-f_one = Fraction(3, 10)
-f_two = Fraction(5, 6)
-f_three = f_one + f_two
+f_one = Fraction(8, 5)
+f_two = Fraction(20, 4)
 
+f_three = f_one + f_two
+print(f_three)
+
+f_three = f_one * f_two
+print(f_three)
+
+f_three = f_one - f_two
 print(f_three)
