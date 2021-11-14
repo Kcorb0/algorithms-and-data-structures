@@ -10,17 +10,15 @@ def sum_of_n(n):
 
     end = time.time()
 
-    return nsum, (end - start)
+    return nsum, '{0:.20f}'.format(start-end)
 
-def sumOfN3(n):
+def sum_of_n3(n):
     start = time.time()
     nsum = ((n*(n+1))/2)
     end = time.time()
 
-    return nsum, start-end
+    return nsum, '{0:.16f}'.format(start-end)
 
-#print(sum_of_n(10000000))
-#print(sumOfN3(100000000000000000000000000000000000000000000))
 
 
 # Find minimum number, O(n) linear algorithm
@@ -34,4 +32,7 @@ def findmin(alist):
 
     return num
 
-print(findmin([15215, 2125, 1255, 125, 1526, 127, 6325]))
+n = 100000010
+
+for i in range(100000000, n):
+    print(sum_of_n(i))
