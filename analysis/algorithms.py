@@ -19,10 +19,7 @@ def sum_of_n3(n):
 
     return nsum, '{0:.16f}'.format(start-end)
 
-
-
 # Find minimum number, O(n) linear algorithm
-
 def findmin(alist):
     num = alist[0]
 
