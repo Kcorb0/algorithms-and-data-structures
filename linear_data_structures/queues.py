@@ -1,6 +1,7 @@
 # Hot potato sim
 # input list of names and constant for counting round the circle
 # Output survivor
+
 from pythonds.basic import Queue
 
 def hotpotato(names, num):
