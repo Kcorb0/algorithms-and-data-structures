@@ -28,13 +28,10 @@ def log_rec(n):
 
 # O(log n) - Iterative
 def log_iter(n):
-    new_num = n
-    while True:
-        if new_num != 0:
-            new_num = math.floor(new_num / 2)
-        else:
-            return new_num
-        print(new_num)
+    while n != 0:
+        n = math.floor(n / 2)
+        print(n)
+        
 
 
 print(log_iter(100000000000000))
